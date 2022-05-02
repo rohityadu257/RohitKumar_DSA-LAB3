@@ -7,13 +7,13 @@ import java.util.ArrayList;
 	Node left,right;
 
 	Node(int d)
-    {
+    	{
         data = d;
         left = right = null;
-    }
-}
+    	}
+	}
 
-public class BinarySearchTree {
+	public class BinarySearchTree {
 	Node root;
 	 
     // Constructor
@@ -22,13 +22,12 @@ public class BinarySearchTree {
         root = null;
     }
  
-    // Inorder traversal of the tree
     void inorder()
     {
         inorderUtil(this.root);
     }
  
-    // Utility function for inorder traversal of the tree
+   
     void inorderUtil(Node node)
     {
         if (node == null)
@@ -39,14 +38,14 @@ public class BinarySearchTree {
         inorderUtil(node.right);
     }
 
-void insert(int data)
-{
+    void insert(int data)
+    {
     root = insertRec(root, data);
-}
+    }
 
-/* A recursive function to insert a new key in BST */
-Node insertRec(Node root, int data)
-{
+
+    Node insertRec(Node root, int data)
+    {
 
     /* If the tree is empty, return a new node */
     if (root == null) {
@@ -59,7 +58,7 @@ Node insertRec(Node root, int data)
         root.right = insertRec(root.right, data);
 
     return root;
-}
+    }
 
 	ArrayList<Integer> BSTList(Node node,ArrayList<Integer>List){
 		
@@ -82,16 +81,16 @@ Node insertRec(Node root, int data)
 		 while(start < end) {
 			 if(a2.get(start) + a2.get(end) ==  key)
 			 {
-				 System.out.println(" Pair node found ( " + a2.get(start) + " , " + a2.get(end)  +  " ) = " + key);
-				 return true;
+				System.out.println(" Pair node found ( " + a2.get(start) + " , " + a2.get(end)  +  " ) = " + key);
+				return true;
 			 }
 			 if(a2.get(start) + a2.get(end) > key)
 			 {
-				 end--;
+				end--;
 			 }
 			 if(a2.get(start) + a2.get(end) < key)
 			 {
-				 start++;
+				start++;
 			 }
 			 
 		 }
@@ -99,23 +98,27 @@ Node insertRec(Node root, int data)
 		 return false;
 	}
 		 
-		 public static void main(String[] args) {
+		 public static void main(String[] args) 
+		 {
 		 BinarySearchTree tree = new BinarySearchTree();
 		 
-		 	tree.insert(40);
-		 	tree.insert(20);
+	        tree.insert(40);
+		tree.insert(20);
 	        tree.insert(60);
 	        tree.insert(10);
 	        tree.insert(30);
 	        tree.insert(70);
 	        tree.insert(50);
 	 
+	 
 	        tree.pairPresent(tree.root, 130);
 	    
-}
+		 }
 
 
-}
+	}
+
+
 
 
 
